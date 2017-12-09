@@ -1,0 +1,296 @@
+<div style="text-align: center;">
+    <!--轮播图-->
+    <section id="main-slide" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img class="img-responsive" ng-src="{{vm.message.img1}}">
+            </div>
+            <div class="item">
+                <img class="img-responsive" ng-src="{{vm.message.img2}}">
+            </div>
+            <div class="item">
+                <img class="img-responsive" ng-src="{{vm.message.img3}}">
+            </div>
+            <a class="left carousel-control" href="http://demo.graygrids.com/themes/mea-new/index.html#main-slide" data-slide="prev">
+                <span><i class="fa fa-angle-left" style="background-color: #009688;" data-ripple-color="#F0F0F0"><div class="ripple-container"></div></i></span>
+            </a>
+            <a class="right carousel-control" href="http://demo.graygrids.com/themes/mea-new/index.html#main-slide" data-slide="next">
+                <span><i class="fa fa-angle-right" style="background-color: #009688;" data-ripple-color="#F0F0F0"><div class="ripple-container"></div></i></span>
+            </a>
+        </div>
+    </section>
+</div>
+<!--乡村简介-->
+<section class="mea-about-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mea-title-section wow animated slideInLeft" data-wow-delay=".2s">
+                <h1 flex hide-sm hide-xs class="section-titile-bg">乡村简介</h1>
+                <h1 class="section-title">乡村简介</h1>
+            </div>
+            <div class="col-md-6 mea-section-quote wow animated slideInRight" data-wow-delay=".2s">
+                <blockquote>
+                    <p>{{vm.message.webabout}}</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+<!--通知公告-->
+<section class="mea-our-team-section section-padding section-dark" style="padding-bottom: 100px;background-color:#EEEEEE">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-container text-left sm">
+                    <div class="title-wrap">
+                        <h1 class="title">通知公告</h1><br>
+                        <span class="separator line-separator"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-row-lg-4 mdui-row-xl-4 mdui-grid-list">
+                <div class="mdui-col " ng-repeat="n in vm.notice" style="padding: 10px;">
+                    <div class="mdui-card mdui-hoverable">
+                        <div class="mdui-card-primary">
+                            <a ui-sref="tongzhidetail({id:n._id})" class="mdui-card-primary-title">{{n.notice_title|limitTo:20}}</a>
+                            <div class="mdui-card-primary-subtitle">{{n.notice_date|date:'yyyy-MM-dd'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mdui-chip" style="float: right;margin: 2px;">
+                    <span class="mdui-chip-title" ng-click="vm.xianotice()" ng-show="vm.noticeshowxia">下一页</span>
+                </div>
+                <div class="mdui-chip" style="float: right;margin: 2px;">
+                    <span class="mdui-chip-title" ng-click="vm.shangnotice()" ng-show="vm.noticepage!=1">上一页</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--新闻公告-->
+
+<section class="mea-about-section section-padding">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="title-container text-left sm">
+                <div class="title-wrap">
+                    <h1 class="title">新闻公告</h1><br>
+                    <span class="separator line-separator"></span>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-4" ng-repeat="news in vm.new">
+            <div class="event-wrap">
+                <div class="event-img-wrap">
+                    <img alt="Event" class="img-responsive" ng-src="{{news.news_img}}" ui-sref="newsdetail({id:news._id})">
+                </div>
+                <div class="event-details">
+                    <a class="widget-title" ui-sref="newsdetail({id:news._id})">{{news.news_title|limitTo:18}}</a>
+                </div>
+            </div>
+        </div> -->
+        <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-3 mdui-row-xl-3 mdui-grid-list">
+            <div class="mdui-col " ng-repeat="news in vm.new" style="padding: 10px;">
+                <div class="mdui-card mdui-hoverable">
+                    <div class="mdui-card-media">
+                        <img style="height:300px" ng-src="{{news.news_img[0]}}" ui-sref="newsdetail({id:news._id})" />
+                    </div>
+
+                    <div class="mdui-card-actions">
+                        <a href="" ui-sref="newsdetail({id:news._id})">{{news.news_title|limitTo:14}}...</a>
+                        <span class="mdui-float-right">{{news.news_date|date:'yyyy-MM-dd'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mdui-chip" style="float: right;margin: 2px;">
+                <span class="mdui-chip-title" ng-click="vm.xianews()" ng-show="vm.newsshowxia">下一页</span>
+            </div>
+            <div class="mdui-chip" style="float: right;margin: 2px;">
+                <span class="mdui-chip-title" ng-click="vm.shangnews()" ng-show="vm.newspage!=1">上一页</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!--山乡美景-->
+<section class="mea-our-team-section section-padding section-dark" style="padding-bottom: 50px;background-color:#EEEEEE">
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="title-container text-left sm">
+                <div class="title-wrap">
+                    <h1 class="title">山乡美景</h1><br>
+                    <span class="separator line-separator"></span>
+                </div>
+            </div>
+            <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-3 mdui-row-xl-3 mdui-grid-list">
+                <div class="mdui-col " ng-repeat="v in vm.view" style="padding: 10px;">
+                    <div class="mdui-card mdui-hoverable">
+                        <div class="mdui-card-media">
+                            <img ng-src="{{v.village_view_img}}" style="height:400px" />
+                            <div class="mdui-card-media-covered mdui-card-media-covered-top mdui-card-media-covered-gradient">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">{{v.village_view_title}}</div>
+                                    <div class="mdui-card-primary-subtitle">{{v.village_view_date|date:'yyyy-MM-dd'}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mdui-chip" style="float: right;margin: 2px;">
+                    <span class="mdui-chip-title" ng-click="vm.xiaimg()" ng-show="vm.imgshowxia">下一页</span>
+                </div>
+                <div class="mdui-chip" style="float: right;margin: 2px;">
+                    <span class="mdui-chip-title" ng-click="vm.shangimg()" ng-show="vm.imgpage!=1">上一页</span>
+                </div>
+            </div>
+        </div>
+</section>
+<!--地图-->
+<section id=contact style="background-color: rgb(229, 234, 241);">
+    <div class="divider-new ">
+        <div layout="column" layout-gt-xs="row">
+            <div flex="30">
+                <md-card class="md-whiteframe-9dp ">
+                    <div id="wrap" class="my-map">
+                        <div id="mapContainer"></div>
+                    </div>
+                </md-card><br>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .my-map {
+        margin: 0 auto;
+        width: 100%;
+        height: 600px;
+    }
+    
+    .my-map .icon {
+        background: url(http://lbs.amap.com/console/public/show/marker.png) no-repeat;
+    }
+    
+    .my-map .icon-flg {
+        height: 32px;
+        width: 29px;
+    }
+    
+    .my-map .icon-flg-red {
+        background-position: -65px -5px;
+    }
+    
+    .amap-container {
+        height: 100%;
+    }
+</style>
+<script>
+    ! function() {
+        var infoWindow, map, level = 8,
+            center = {
+                lng: 113.656326,
+                lat: 38.773177
+            },
+            features = [{
+                type: "Marker",
+                name: "石榴沟村",
+                desc: "河北工程大学精准扶贫村",
+                color: "red",
+                icon: "flg",
+                offset: {
+                    x: -12,
+                    y: -26
+                },
+                lnglat: {
+                    lng: 113.71675,
+                    lat: 38.618836
+                }
+            }];
+
+        function loadFeatures() {
+            for (var feature, data, i = 0, len = features.length, j, jl, path; i < len; i++) {
+                data = features[i];
+                switch (data.type) {
+                    case "Marker":
+                        feature = new AMap.Marker({
+                            map: map,
+                            position: new AMap.LngLat(data.lnglat.lng, data.lnglat.lat),
+                            zIndex: 3,
+                            extData: data,
+                            offset: new AMap.Pixel(data.offset.x, data.offset.y),
+                            title: data.name,
+                            content: '<div class="icon icon-' + data.icon + ' icon-' + data.icon + '-' + data.color + '"></div>'
+                        });
+                        break;
+                    case "Polyline":
+                        for (j = 0, jl = data.lnglat.length, path = []; j < jl; j++) {
+                            path.push(new AMap.LngLat(data.lnglat[j].lng, data.lnglat[j].lat));
+                        }
+                        feature = new AMap.Polyline({
+                            map: map,
+                            path: path,
+                            extData: data,
+                            zIndex: 2,
+                            strokeWeight: data.strokeWeight,
+                            strokeColor: data.strokeColor,
+                            strokeOpacity: data.strokeOpacity
+                        });
+                        break;
+                    case "Polygon":
+                        for (j = 0, jl = data.lnglat.length, path = []; j < jl; j++) {
+                            path.push(new AMap.LngLat(data.lnglat[j].lng, data.lnglat[j].lat));
+                        }
+                        feature = new AMap.Polygon({
+                            map: map,
+                            path: path,
+                            extData: data,
+                            zIndex: 1,
+                            strokeWeight: data.strokeWeight,
+                            strokeColor: data.strokeColor,
+                            strokeOpacity: data.strokeOpacity,
+                            fillColor: data.fillColor,
+                            fillOpacity: data.fillOpacity
+                        });
+                        break;
+                    default:
+                        feature = null;
+                }
+                if (feature) {
+                    AMap.event.addListener(feature, "click", mapFeatureClick);
+                }
+            }
+        }
+
+        function mapFeatureClick(e) {
+            if (!infoWindow) {
+                infoWindow = new AMap.InfoWindow({
+                    autoMove: true
+                });
+            }
+            var extData = e.target.getExtData();
+            infoWindow.setContent("<h5>" + extData.name + "</h5><div>" + extData.desc + "</div>");
+            infoWindow.open(map, e.lnglat);
+        }
+
+        map = new AMap.Map("mapContainer", {
+            center: new AMap.LngLat(center.lng, center.lat),
+            level: level,
+            scrollWheel: false
+        });
+
+        loadFeatures();
+
+        map.on('complete', function() {
+            map.plugin(["AMap.ToolBar", "AMap.Scale"], function() {
+                map.addControl(new AMap.ToolBar);
+                map.addControl(new AMap.Scale);
+            });
+        })
+
+    }();
+</script>

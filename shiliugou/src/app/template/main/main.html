@@ -1,0 +1,121 @@
+<md-sidenav hide-gt-sm md-component-id="left" class="md-whiteframe-z2 md-sidenav-left">
+    <md-toolbar layout="column" layout-align="center center" style="height: 168px;min-height: 168px;max-height: 168px">
+        <md-button ng-click="vm.go('home')">石榴沟</md-button>
+    </md-toolbar>
+    <md-content layout-padding>
+        <div class="mdui-list" mdui-collapse="{accordion: true}" style="padding:0;">
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.go('xiangcun')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-teal">&#xe7fb;</i>
+                <div class="mdui-list-item-content">乡村特色</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.godetail('xiangcundetail','石榴博览园')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-teal">&#xe7fb;</i>
+                <div class="mdui-list-item-content">石榴博览园</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.godetail('xiangcundetail','石榴文化馆')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-teal">&#xe7fb;</i>
+                <div class="mdui-list-item-content">石榴文化馆</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.go('minsu')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-teal">&#xe7fb;</i>
+                <div class="mdui-list-item-content">山村民宿</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.go('fupin')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe865;</i>
+                <div class="mdui-list-item-content">精准扶贫</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.go('dang')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color- pink">&#xe1bd;</i>
+                <div class="mdui-list-item-content">党的建设</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.go('zizhi')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe865;</i>
+                <div class="mdui-list-item-content">村民自治</div>
+            </li>
+            <li class="mdui-list-item mdui-ripple" ng-click="vm.go('words')">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color- pink">&#xe1bd;</i>
+                <div class="mdui-list-item-content">政策文件</div>
+            </li>
+        </div>
+
+        <md-divider></md-divider>
+        <div style="position:relative;"> Powered by shiliugou ©2017.</div>
+    </md-content>
+</md-sidenav>
+
+<div layout="column" flex style="overflow: hidden;">
+    <md-toolbar layout=" row " layout-align="center center " md-whiteframe="5">
+        <section class="md-toolbar-tools " style="height: 100%;max-height: 50px ; ">
+            <md-button hide-gt-sm ng-click="vm.toggleLeft() " class="md-icon-button " aria-label="Settings ">
+                <md-icon md-svg-icon="assets/images/svg/menu.svg "></md-icon>
+            </md-button>
+            <img src="assets/images/logo.svg" style="height: 60px;" alt="">
+            <!-- 
+            <md-truncate>石榴沟欢迎你</md-truncate> -->
+            <span flex></span>
+            <div>
+                <div hide-sm hide-xs style="height:100% ">
+                    <md-menu-bar>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="home ">石榴沟</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="xiangcun">特色乡村</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="xiangcundetail({type:'石榴博览园'})">石榴博览园</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="xiangcundetail({type:'石榴文化馆'})">石榴文化馆</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="minsu">山村民宿</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="fupin ">精准扶贫</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="dang ">党的建设</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="zizhi ">村民自治</md-button>
+                        <md-button style="height:100% " aria-label="flat button " ui-sref="words ">政策文件</md-button>
+                    </md-menu-bar>
+                </div>
+            </div>
+            <md-menu>
+
+                <md-button aria-label="Open menu with custom trigger " class="md-icon-button " ng-click="$mdMenu.open() ">
+                    <md-icon md-menu-origin md-svg-icon="assets/images/svg/more.svg "></md-icon>
+                </md-button>
+                <md-menu-content width="4 " ng-mouseleave="$mdMenu.close() ">
+                    <md-menu-item>
+                        <md-button ng-click="vm.go( 'login') ">
+                            进入后台
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </section>
+    </md-toolbar>
+    <md-content class="homecontent " md-scroll-y flex layout="column " id=content>
+        <div ui-view></div>
+        <footer class="mea-footer-section ">
+            <div class="footer-copyright-section " style="background: #009688;color: #fdfdfd;">
+                <div class="container ">
+                    <div class="col-md-12 ">
+                        <div style="padding:25px 20px" layout-xs="column" layout-gt-xs="row" layout-align="center center">
+                            <a style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple " href="http://www.hebeu.edu.cn/" target="_blank">河北工程大学</a>
+                            <a style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple " href="http://www.hebei.gov.cn/hebei/10731222/index.html" target="_blank">走进河北</a>
+                            <a style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple " href="http://www.sjz.gov.cn/" target="_blank">石家庄市政府</a>
+                            <a style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple " href="http://info.xbp.gov.cn/" target="_blank">平山县政府</a>
+                            <a style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple " href="http://www.11467.com/shijiazhuang/co/40274.htm" target="_blank">营里乡政府</a>
+                        </div>
+                    </div>
+
+                    <div class=" col-md-12 " style="text-align:left">
+                        <div style="text-align:center ">
+                            <ul class="list-unstyled ">
+                                <li>石榴沟村电话：{{vm.message.phone}}</li>
+                                <li>邮箱：{{vm.message.email}}</li>
+                                <li>{{vm.message.banquan}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </md-content>
+
+    <md-button ng-show="vm.isshow " id=backTop class="md-fab " ng-click="vm.backtop() " aria-label="Menu with Tooltip Delay " style="position: fixed;bottom: 30px;right: 30px; ">
+        <md-tooltip md-direction="top ">
+            backtop
+        </md-tooltip>
+        <md-icon md-svg-src="assets/images/svg/backtop.svg "></md-icon>
+    </md-button>
+</div>

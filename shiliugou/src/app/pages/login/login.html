@@ -1,0 +1,22 @@
+<div id='loginPage' ng-show=!loggedIn>
+    <div id='loginModule'>
+        <h1 id=logo>登录</h1>
+        <div id='loginDialog'>
+            <md-tabs class='loginTabs' md-dynamic-height md-no-ink md-stretch-tabs="always">
+                <md-tab class='loginTab' label="Sign In" id="signInTab">
+                    <form ng-submit="vm.login()" style="margin: 25px 25px;">
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <label>用户名</label>
+                            <input name="username" ng-model="vm.user.username">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <label>密码</label>
+                            <input type="password" name="password" ng-model="vm.user.password">
+                        </md-input-container>
+                        <md-button class='loginBtn' type="submit" id="signInBtn">Sign In</md-button>
+                    </form>
+                </md-tab>
+            </md-tabs>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<md-card>
+    <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+        <div class="md-toolbar-tools">
+            <h2 class="md-title">山乡美景列表</h2>
+            <div flex></div>
+            <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+            </div>
+            <md-button class="md-icon-button" ui-sref="editshanxiang">
+                <md-icon>add</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-table-container>
+        <table md-table>
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.getBlogs">
+                <tr md-row>
+                    <th md-column md-order-by="village_view_title"><span>标题</span></th>
+                    <th md-column md-order-by="village_view_img"><span>图片</span></th>
+                    <th md-column md-order-by="village_view_date"><span>时间</span></th>
+                    <th md-column md-order-by="village_view_author"><span>作者</span></th>
+                    <th md-column md-order-by="village_view_status"><span>状态</span></th>
+                    <th md-column><span>浏览</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="village_view in vm.village_view|filter:search| orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                    <td md-cell>{{village_view.village_view_title}}</td>
+                    <td md-cell><img ng-src="{{village_view.village_view_img}}" style="height:50px" alt=""></td>
+                    <td md-cell>{{village_view.village_view_date|date:'yyyy-MM-dd'}}</td>
+                    <td md-cell>{{village_view.village_view_author}}</td>
+                    <td md-cell>{{village_view.village_view_status}}</td>
+                    <td md-cell>
+                        <md-button class="md-icon-button md-ink-ripple" ui-sref="editshanxiang({id:village_view._id})">
+                            <md-icon class="material-icons">edit</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class="md-icon-button md-ink-ripple" ng-click="vm.delvillage_view(village_view)">
+                            <md-icon class="material-icons">delete</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class=" md-ink-ripple" ng-click="vm.pubvillage_view(village_view)" ng-show="village_view.village_view_status=='未发布'">
+                            发布
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+    <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.village_view.length}}" md-page-select=true md-on-paginate=true></md-table-pagination>
+</md-card>

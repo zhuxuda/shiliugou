@@ -1,0 +1,35 @@
+<section class="mea-our-team-section section-padding section-dark" style="padding-bottom: 0px;background-color:#EEEEEE">
+    <div class="container">
+        <!--<div flex-gt-md="50" flex-offset-gt-md="25" flex="80">
+            <h1 style="margin: 100px 0">{{vm.notice.notice_title}}</h1>
+            {{vm.notice.notice_date|date:'yyyy-MM-dd'}} {{vm.notice.notice_author}}
+            <p ng-bind-html="vm.notice.notice_content"></p>
+        </div>-->
+        <div layout="row" layout-align="space-around stretch" class="col-md-12 ">
+            <div class="widget">
+                <ul class="event-widget">
+                    <li>
+                        <h1 >{{vm.notice.notice_title}}</h1>
+                        <p><i class="fa fa-calendar-o">&nbsp</i> {{vm.notice.notice_date|date:'yyyy-MM-dd'}}</p>
+                        <hr>
+                        <p ng-bind-html="vm.notice.notice_content"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section class="mea-about-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mea-title-section wow animated slideInLeft" data-wow-delay=".2s">
+                <h1 class="section-title">{{vm.notice.notice_title}}</h1>
+            </div>
+            <div class="col-md-6 mea-section-quote wow animated slideInRight" data-wow-delay=".2s">
+                <blockquote>
+                        <p ng-bind-html="vm.notice.notice_content"></p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>-->

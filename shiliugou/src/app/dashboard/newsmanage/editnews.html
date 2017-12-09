@@ -1,0 +1,56 @@
+<div layout-padding>
+    <h1 class="md-display-1" ng-if="vm.isnew">撰写新闻</h1>
+    <h1 class="md-display-1" ng-if="!vm.isnew">修改新闻</h1>
+    <md-card>
+        <div layout-padding>
+            <form name="news">
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>标题</label>
+                        <input ng-model="vm.news.news_title">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>作者</label>
+                        <input ng-model="vm.news.news_author">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs ng-if="!vm.isnew">
+                        <label>状态</label>
+                        <md-select ng-model="vm.news.news_status">
+                            <md-option ng-repeat="state in ['未发布','已发布']" ng-value="state">
+                                {{state}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row" ng-show="false">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>图片</label>
+                        <input ng-model="vm.news.news_img">
+                    </md-input-container>
+                </div>
+                <!-- {{vm.news.news_img}} -->
+                <div class="row">
+                    <div class="col-md-4" ng-repeat="img in vm.news.news_img">
+                        <img ng-src="{{img}}" alt="" style="height:100px">
+                        <button class="mdui-btn mdui-btn-icon" ng-click="vm.remove(img)"><i class="mdui-icon material-icons">delete</i></button>
+                    </div>
+                </div>
+
+                <lf-ng-md-file-input lf-files="files" submit lf-on-submit-click="vm.onSubmitClick" aria-label="fileupload" lf-browse-label="浏览..." lf-remove-label="删除" lf-submit-label="上传"></lf-ng-md-file-input>
+            </form>
+        </div>
+    </md-card>
+    <h1 class="md-display-1">文章内容</h1>
+    <md-card>
+        <div layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <text-angular ng-model="vm.news.news_content"></text-angular>
+            </md-input-container>
+        </div>
+        <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+            <md-button class="md-raised md-primary" ng-click="vm.publicnews()" ng-if="vm.isnew">发布</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.editlog()" ng-if="!vm.isnew">修改</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.savenews()" ng-if="vm.isnew">保存草稿</md-button>
+        </section>
+    </md-card>
+</div>

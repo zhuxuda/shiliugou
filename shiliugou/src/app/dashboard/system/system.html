@@ -1,0 +1,135 @@
+<!--<h1 class="md-display-2">系统设置</h1>-->
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">网站信息</span>
+        </md-card-title-text>
+    </md-card-title>
+    <div layout-padding>
+        <form name="systemconfig">
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>网站名称</label>
+                    <input ng-model="vm.system.name">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>logo图片网址</label>
+                    <input ng-model="vm.system.logo">
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>首页大屏标题</label>
+                    <input ng-model="vm.system.First_title">
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <!-- <label>轮播图1</label>
+                    <input ng-model="vm.system.img1"> -->
+                    <img ng-src="{{vm.system.img1}}" alt="" style="height:300px;width:100%">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <!-- <label>轮播图2</label>
+                    <input ng-model="vm.system.img2"> -->
+                    <img ng-src="{{vm.system.img2}}" alt="" style="height:300px;width:100%">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <!-- <label>轮播图3</label>
+                    <input ng-model="vm.system.img3"> -->
+                    <img ng-src="{{vm.system.img3}}" alt="" style="height:300px;width:100%">
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <lf-ng-md-file-input lf-files="img1" submit lf-on-submit-click="vm.onSubmitClick1" aria-label="fileupload" lf-browse-label="浏览..." lf-remove-label="删除" lf-submit-label="上传"></lf-ng-md-file-input>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <lf-ng-md-file-input lf-files="img2" submit lf-on-submit-click="vm.onSubmitClick2" aria-label="fileupload" lf-browse-label="浏览..." lf-remove-label="删除" lf-submit-label="上传"></lf-ng-md-file-input>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <lf-ng-md-file-input lf-files="img3" submit lf-on-submit-click="vm.onSubmitClick3" aria-label="fileupload" lf-browse-label="浏览..." lf-remove-label="删除" lf-submit-label="上传"></lf-ng-md-file-input>
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>关于我们</label>
+                    <textarea ng-model="vm.system.webabout" md-maxlength="1000" rows="4"></textarea>
+                </md-input-container>
+            </div>
+        </form>
+    </div>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">联系信息</span>
+        </md-card-title-text>
+    </md-card-title>
+    <div layout-padding>
+        <form>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>位置</label>
+                    <input ng-model="vm.system.location">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>手机号</label>
+                    <input ng-model="vm.system.phone">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>邮箱</label>
+                    <input minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" ng-model="vm.system.email">
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>经度</label>
+                    <input ng-model="vm.system.jingdu">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>纬度</label>
+                    <input ng-model="vm.system.weidu">
+                </md-input-container>
+
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>版权信息文字</label>
+                    <input ng-model="vm.system.banquan">
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-button type="submit" ng-click="vm.submitwebconfig()" class="md-raised md-primary">
+                    保存
+                </md-button>
+            </div>
+        </form>
+    </div>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">登录信息</span>
+        </md-card-title-text>
+    </md-card-title>
+    <div layout-padding>
+        <form>
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>用户名</label>
+                    <input ng-model="vm.user.username">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>旧密码</label>
+                    <input type="password" ng-model="vm.user.oldpwd">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>新密码</label>
+                    <input type="password" ng-model="vm.user.newpwd">
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-button type="submit" ng-click="vm.edituser()" class="md-raised md-primary">
+                    修改
+                </md-button>
+            </div>
+        </form>
+    </div>
+</md-card>

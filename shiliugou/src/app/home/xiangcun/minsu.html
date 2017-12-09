@@ -1,0 +1,26 @@
+<section class="mea-about-section section-padding">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="title-container text-left sm">
+                <div class="title-wrap">
+                    <h1 class="title">山村民宿</h1><br>
+                    <span class="separator line-separator"></span>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-3 mdui-row-xl-3 mdui-grid-list">
+            <div class="mdui-col " ng-repeat="village in vm.village_special" style="padding: 10px;">
+                <div class="mdui-card mdui-hoverable">
+                    <div class="mdui-card-media">
+                        <img style="height:300px" ng-src="{{village.village_special_img[0]}}" ui-sref="minsudetail({id:village._id})" />
+                    </div>
+
+                    <div class="mdui-card-actions">
+                        <a href="" ui-sref="minsudetail({id:village._id})">{{village.village_special_title|limitTo:14}}...</a>
+                        <span class="mdui-float-right">{{village.village_special_date|date:'yyyy-MM-dd'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

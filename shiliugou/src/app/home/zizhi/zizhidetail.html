@@ -1,0 +1,16 @@
+<section class="mea-our-team-section section-padding section-dark">
+    <div class="container">
+        <div layout="row" layout-align="space-around stretch" class="col-md-12 ">
+            <div class="widget">
+                <ul class="event-widget">
+                    <li>
+                        <h1>{{vm.zizhi.zizhi_title}}</h1>
+                        <p><i class="fa fa-calendar-o">&nbsp</i> {{vm.zizhi.zizhi_date|date:'yyyy-MM-dd'}}</p>
+                        <hr>
+                        <p ng-bind-html="vm.zizhi.zizhi_content"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

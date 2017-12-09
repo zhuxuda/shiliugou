@@ -1,0 +1,93 @@
+<md-sidenav hide-gt-sm md-component-id="left" class="md-whiteframe-z2 md-sidenav-left">
+    <md-toolbar layout="row" layout-align="center center" style="background-color: #eee;height: 168px;min-height: 168px;max-height: 168px">
+        <!--<section class="md-toolbar-tools">
+            <md-button ui-sref="home">石榴沟</md-button>
+        </section>-->
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item ng-click="vm.go('systemmanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>系统设置</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('fupinmanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>精准扶贫</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('tongzhimanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>通知公告</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('newsmanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>新闻列表</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('shanxiangmanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>山乡美景</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('xiangcunmanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>乡村特色</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('dangmanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>党的建设</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('zizhimanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>村民自治</p>
+            </md-list-item>
+            <md-list-item ng-click="vm.go('filemanage')">
+                <md-icon md-svg-icon="assets/images/svg/home.svg"></md-icon>
+                <p>政策文件</p>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-list>
+        <div style="bottom:25px"> Powered by shiliugou ©2017.</div>
+    </md-content>
+</md-sidenav>
+
+<div layout="column" flex style="overflow: hidden;">
+
+    <md-toolbar layout="row" layout-align="center center" md-whiteframe="5">
+        <section class="md-toolbar-tools" style="height: 100%;max-height: 50px">
+            <md-button hide-gt-sm ng-click="vm.toggleLeft()" class="md-icon-button" aria-label="Settings">
+                <md-icon md-svg-icon="assets/images/svg/menu.svg"></md-icon>
+            </md-button>
+            <h2 flex>
+                <md-button ui-sref="home">石榴沟</md-button>
+            </h2>
+            <div hide-sm hide-xs style="height:100%">
+                <md-button style="height:100%" aria-label="flat button" ui-sref="systemmanage">系统设置</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="fupinmanage">精准扶贫</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="tongzhimanage">通知公告</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="newsmanage">新闻列表</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="shanxiangmanage">山乡美景</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="xiangcunmanage">特色乡村</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="dangmanage">党的建设</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="zizhimanage">村民自治</md-button>
+                <md-button style="height:100%" aria-label="flat button" ui-sref="filemanage">政策文件</md-button>
+            </div>
+            <md-menu>
+                <md-button aria-label="Open menu with custom trigger" class="md-icon-button" ng-click="$mdMenu.open()">
+                    <md-icon md-menu-origin md-svg-icon="assets/images/svg/more.svg"></md-icon>
+                </md-button>
+                <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+                    <md-menu-item>
+                        <md-button ng-click="vm.gohome()">
+                            返回首页
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.logout()">
+                            退出登录
+                        </md-button>
+                    </md-menu-item>
+            </md-menu>
+        </section>
+    </md-toolbar>
+    <md-content id="content">
+        <div ui-view layout-fill></div>
+    </md-content>
+</div>

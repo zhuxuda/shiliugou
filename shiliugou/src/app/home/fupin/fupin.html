@@ -1,0 +1,156 @@
+<!--精准扶贫-->
+<section class="mea-about-section section-padding" style="padding-bottom:30px;padding-top:150px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mea-title-section wow animated slideInLeft" data-wow-delay=".2s">
+                <h1 flex hide-sm hide-xs class="section-titile-bg">精准扶贫</h1>
+                <h1 class="section-title">精准扶贫</h1>
+            </div>
+            <div class="col-md-6 mea-section-quote wow animated slideInRight" data-wow-delay=".2s">
+                <blockquote>
+                    <p style="text-indent:2em">2016年始，响应党和国家“打赢脱贫攻坚战”的号召，按照河北省精准扶贫工作统一部署，河北工程大学精准扶贫驻村工作组驻村开展精准扶贫、精准脱贫工作。</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-grey" style="padding-bottom:30px;padding-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #e29c04;">
+                    <h5 style="color: #fff;">{{vm.fupin[0].counter_name}}({{vm.fupin[0].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[0].counter_num_value}}</span></h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #4caf50;">
+                    <h5 style="color: #fff;">{{vm.fupin[1].counter_name}}({{vm.fupin[1].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[1].counter_num_value}}</span></h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #e91e63;">
+                    <h5 style="color: #fff;">{{vm.fupin[2].counter_name}}({{vm.fupin[2].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[2].counter_num_value}}</span></h3>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #bb56c3;">
+                    <h5 style="color: #fff;">{{vm.fupin[3].counter_name}}({{vm.fupin[3].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[3].counter_num_value}}</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="padding-top:50px;padding-bottom:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #bb56c3;">
+                    <h5 style="color: #fff;">{{vm.fupin[4].counter_name}}({{vm.fupin[4].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[4].counter_num_value}}</span></h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #e91e63;">
+                    <h5 style="color: #fff;">{{vm.fupin[5].counter_name}}({{vm.fupin[5].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[5].counter_num_value}}</span></h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #4caf50;">
+                    <h5 style="color: #fff;">{{vm.fupin[6].counter_name}}({{vm.fupin[6].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[6].counter_num_value}}</span></h3>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="count-block" style="background-color: #e29c04;">
+                    <h5 style="color: #fff;">{{vm.fupin[7].counter_name}}({{vm.fupin[7].counter_num_units}})</h5>
+                    <h3 style="color: #fff;" class="count-number" data-count="452"><span class="counter">{{vm.fupin[7].counter_num_value}}</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="mea-our-team-section section-padding section-dark" style="padding-bottom: 100px;background-color:#EEEEEE">
+    <div class="container">
+        <!-- <md-card>
+            <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+                <div class="md-toolbar-tools">
+                    <h2 class="md-title">精准扶贫</h2>
+                    <div flex></div>
+                    <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                        <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                        <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+                    </div>
+                </div>
+            </md-toolbar>
+
+            <md-table-container>
+                <table md-table>
+                    <thead md-head md-order="vm.query.order" md-on-reorder="vm.getBlogs">
+                        <tr md-row>
+                            <th md-column md-order-by="dang_title"><span>标题</span></th>
+                            <th md-column md-order-by="dang_date"><span>时间</span></th>
+                            <th md-column md-order-by="dang_author"><span>作者</span></th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="dang in vm.dang|filter:search| orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                            <td md-cell><a ui-sref="dangdetail({id:dang._id})">{{dang.dang_title}}</a></td>
+                            <td md-cell>{{dang.dang_date}}</td>
+                            <td md-cell>{{dang.dang_author}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.dang.length}}" md-page-select=true md-on-paginate=true></md-table-pagination>
+        </md-card> -->
+        <md-card>
+            <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+                <div class="md-toolbar-tools">
+                    <h2 class="md-title">精准扶贫</h2>
+                    <div flex></div>
+                    <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                        <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                        <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+                    </div>
+                </div>
+            </md-toolbar>
+
+            <md-table-container>
+                <table md-table>
+                    <thead md-head md-order="vm.query.order" md-on-reorder="vm.getBlogs">
+                        <tr md-row>
+                            <th md-column md-order-by="originalFilename"><span>文件名称</span></th>
+                            <th md-column md-order-by="time"><span>时间</span></th>
+                            <th md-column md-order-by="size"><span>大小</span></th>
+                            <th md-column><span>浏览</span></th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="file in vm.file|filter:search| orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                            <td md-cell>{{file.originalFilename}}</td>
+                            <td md-cell>{{file.time|date:'yyyy-MM-dd'}}</td>
+                            <td md-cell>{{file.size}}</td>
+                            <td md-cell>
+                                <md-button class="md-icon-button md-ink-ripple" ng-href='{{vm.websiteip + "file/download?_id=" + file._id}}'>
+                                    <md-icon class="material-icons">file_download</md-icon>
+                                    <div class="md-ripple-container"></div>
+                                </md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.file.length}}" md-page-select=true md-on-paginate=true></md-table-pagination>
+        </md-card>
+    </div>
+</section>

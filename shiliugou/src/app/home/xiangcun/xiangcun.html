@@ -1,0 +1,51 @@
+<!--特色乡村-->
+<section class="mea-about-section section-padding">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="title-container text-left sm">
+                <div class="title-wrap">
+                    <h1 class="title">特色乡村</h1><br>
+                    <span class="separator line-separator"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <!-- <div style="padding:25px 20px" layout="row" layout-align="center center">
+                <button style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-4" ng-click="vm.change('*')">全部</button>
+                <button style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-4" ng-click="vm.change('.石榴博览园')">石榴博览园</button>
+                <button style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-4" ng-click="vm.change('.石榴文化馆')">石榴文化馆</button>
+                <button style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-4" ng-click="vm.change('.山村特色')">山村特色</button>
+                <button style="margin: 10px;" class="mdui-btn-raised mdui-btn mdui-ripple mdui-color-theme-accent mdui-shadow-4" ng-click="vm.change('.山村民宿')">山村民宿</button>
+            </div>
+
+            <div class="grid"> -->
+            <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-row-lg-4 mdui-row-xl-4 mdui-grid-list">
+                <div class="mdui-col" ng-repeat="card in vm.village_special" style="padding: 10px;" data-category="transition">
+                    <div class="mdui-card mdui-hoverable">
+                        <div class="mdui-card-media">
+                            <img alt="Event" ng-src="{{card.img}}" style="width :100%;height:250px">
+                            <div class="mdui-card-media-covered mdui-card-media-covered-top mdui-card-media-covered-gradient">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">{{card.title}}</div>
+                                    <div class="mdui-card-primary-subtitle">{{card.date|date:'yyyy-MM-dd'}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- </div> -->
+        </div>
+    </div>
+</section>
+
+<style>
+    /* clear fix */
+    
+    .isotope:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+</style>

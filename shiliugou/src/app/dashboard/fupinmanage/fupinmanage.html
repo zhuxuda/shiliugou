@@ -1,0 +1,164 @@
+<md-card>
+    <div class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+        <div class="md-toolbar-tools">
+            <h2 class="md-title">精准扶贫</h2>
+            <div flex></div>
+        </div>
+        <md-table-container style="padding:20px;">
+            <p style="color:darkgray">扶贫信息简介</p>
+            <p>2016年始，响应党和国家“打赢脱贫攻坚战”的号召，按照河北省精准扶贫工作统一部署，河北工程大学精准扶贫驻村工作组驻村开展精准扶贫、精准脱贫工作</p>
+        </md-table-container>
+
+    </div>
+
+    <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+        <div class="md-toolbar-tools">
+            <h2 class="md-title">计数器列表</h2>
+            <div flex></div>
+            <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+            </div>
+            <md-button class="md-icon-button" ng-click="vm.addItem($event)">
+                <md-icon>add</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-table-container>
+        <table md-table>
+            <thead md-head>
+                <tr md-row>
+                    <th md-column><span>计数器名称</span></th>
+                    <th md-column md-order-by="counter_num_value"><span>数值</span></th>
+                    <th md-column md-order-by="counter_num_units"><span>单位值</span></th>
+                    <th md-column><span>浏览</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="fupin in vm.fupin|filter:search">
+                    <td md-cell>{{fupin.counter_name}}</td>
+                    <td md-cell>{{fupin.counter_num_value}}</td>
+                    <td md-cell>{{fupin.counter_num_units}}</td>
+                    <td md-cell>
+                        <md-button class="md-icon-button md-ink-ripple" ng-click="vm.editfupin(fupin)">
+                            <md-icon class="material-icons">edit</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class="md-icon-button md-ink-ripple" ng-click="vm.delfupin(fupin)">
+                            <md-icon class="material-icons">delete</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+
+</md-card>
+<script type="text/ng-template" id="add-fupin-dialog.html">
+    <md-dialog aria-label="List dialog">
+        <md-dialog-content class="md-dialog-content ">
+            <div>
+                <form name="systemconfig">
+                    <h2>计数器列表</h2>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <label>计数器名称</label>
+                            <input required ng-model="vm.fupin.counter_name">
+                        </md-input-container>
+                    </div>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>数值</label>
+                        <input ng-model="vm.fupin.counter_num_value">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>单位值</label>
+                        <input ng-model="vm.fupin.counter_num_units">
+                    </md-input-container>
+                    <div layout-gt-xs="row">
+                        <md-button type="submit" ng-click="vm.submitbooks()" class="md-raised md-primary">添加
+                        </md-button>
+                    </div>
+                </form>
+            </div>
+        </md-dialog-content>
+    </md-dialog>
+</script>
+<script type="text/ng-template" id="edit-fupin-dialog.html">
+    <md-dialog aria-label="List dialog">
+        <md-dialog-content class="md-dialog-content ">
+            <div>
+                <form name="systemconfig">
+                    <h2>计数器列表</h2>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <label>计数器名称</label>
+                            <input required ng-model="vm.fupin.counter_name">
+                        </md-input-container>
+                    </div>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>数值</label>
+                        <input ng-model="vm.fupin.counter_num_value">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>单位值</label>
+                        <input ng-model="vm.fupin.counter_num_units">
+                    </md-input-container>
+                    <div layout-gt-xs="row">
+                        <md-button ng-click="vm.submit()" class="md-raised md-primary">修改
+                        </md-button>
+                        <md-button ng-click="vm.quxiao()" class="md-raised md-primary">取消
+                        </md-button>
+                    </div>
+                </form>
+            </div>
+        </md-dialog-content>
+    </md-dialog>
+</script>
+<lf-ng-md-file-input style="margin:  20px;" lf-files="files" submit lf-on-submit-click="vm.onSubmitClick" aria-label="fileupload" lf-browse-label="浏览..." lf-remove-label="删除" lf-submit-label="上传"></lf-ng-md-file-input>
+<md-card>
+    <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+        <div class="md-toolbar-tools">
+            <h2 class="md-title">精准扶贫</h2>
+            <div flex></div>
+            <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+            </div>
+        </div>
+    </md-toolbar>
+
+    <md-table-container>
+        <table md-table>
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.getBlogs">
+                <tr md-row>
+                    <th md-column md-order-by="originalFilename"><span>文件名称</span></th>
+                    <th md-column md-order-by="time"><span>时间</span></th>
+                    <th md-column md-order-by="size"><span>大小</span></th>
+                    <th md-column><span>浏览</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="file in vm.file|filter:search| orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                    <td md-cell>{{file.originalFilename}}</td>
+                    <td md-cell>{{file.time}}</td>
+                    <td md-cell>{{file.size}}</td>
+                    <td md-cell>
+                        <md-button class="md-icon-button md-ink-ripple" ng-click="vm.delfile(file)">
+                            <md-icon class="material-icons">delete</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class="md-icon-button md-ink-ripple" ng-href='{{vm.websiteip + "file/download?_id=" + file._id}}'>
+                            <md-icon class="material-icons">file_download</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+    <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.file.length}}" md-page-select=true md-on-paginate=true></md-table-pagination>
+</md-card>

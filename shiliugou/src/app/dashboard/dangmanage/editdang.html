@@ -1,0 +1,41 @@
+<div layout-padding>
+    <h1 class="md-display-1" ng-if="vm.isnew">撰写建设内容</h1>
+    <h1 class="md-display-1" ng-if="!vm.isnew">修改建设内容</h1>
+    <md-card>
+        <div layout-padding>
+            <form name="dang">
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>标题</label>
+                        <input ng-model="vm.dang.dang_title">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>作者</label>
+                        <input ng-model="vm.dang.dang_author">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs ng-if="!vm.isnew">
+                        <label>状态</label>
+                        <md-select ng-model="vm.dang.dang_status">
+                            <md-option ng-repeat="state in ['未发布','已发布']" ng-value="state">
+                                {{state}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </form>
+        </div>
+    </md-card>
+    <h1 class="md-display-1">党的建设内容</h1>
+    <md-card>
+        <div layout-padding>
+            <md-input-container class="md-block" flex-gt-xs>
+                <text-angular ng-model="vm.dang.dang_content"></text-angular>
+            </md-input-container>
+        </div>
+        <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+            <md-button class="md-raised md-primary" ng-click="vm.publicdang()" ng-if="vm.isnew">发布</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.editlog()" ng-if="!vm.isnew">修改</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.savedang()" ng-if="vm.isnew">保存草稿</md-button>
+        </section>
+    </md-card>
+</div>

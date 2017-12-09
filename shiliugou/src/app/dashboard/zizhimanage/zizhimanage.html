@@ -1,0 +1,97 @@
+<!-- <md-card>
+    <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+        <div class="md-toolbar-tools">
+            <h2 class="md-title">村民自治</h2>
+            <div flex></div>
+            <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+            </div>
+            <md-button class="md-icon-button" ui-sref="editzizhi">
+                <md-icon>add</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-table-container>
+        <table md-table>
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.getBlogs">
+                <tr md-row>
+                    <th md-column md-order-by="zizhi_title"><span>标题</span></th>
+                    <th md-column md-order-by="zizhi_date"><span>时间</span></th>
+                    <th md-column md-order-by="zizhi_author"><span>作者</span></th>
+                    <th md-column md-order-by="zizhi_status"><span>状态</span></th>
+                    <th md-column><span>浏览</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="zizhi in vm.zizhi|filter:search| orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                    <td md-cell>{{zizhi.zizhi_title}}</td>
+                    <td md-cell>{{zizhi.zizhi_date}}</td>
+                    <td md-cell>{{zizhi.zizhi_author}}</td>
+                    <td md-cell>{{zizhi.zizhi_status}}</td>
+                    <td md-cell>
+                        <md-button class="md-icon-button md-ink-ripple" ui-sref="editzizhi({id:zizhi._id})">
+                            <md-icon class="material-icons">edit</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class="md-icon-button md-ink-ripple" ng-click="vm.delzizhi(zizhi)">
+                            <md-icon class="material-icons">delete</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class=" md-ink-ripple" ng-click="vm.pubzizhi(zizhi)" ng-show="zizhi.zizhi_status=='未发布'">
+                            发布
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+    <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.zizhi.length}}" md-page-select=true md-on-paginate=true></md-table-pagination>
+</md-card> -->
+<lf-ng-md-file-input style="margin:  20px;" lf-files="files" submit lf-on-submit-click="vm.onSubmitClick" aria-label="fileupload" lf-browse-label="浏览..." lf-remove-label="删除" lf-submit-label="上传"></lf-ng-md-file-input>
+<md-card>
+    <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.filter.show">
+        <div class="md-toolbar-tools">
+            <h2 class="md-title">村民自治</h2>
+            <div flex></div>
+            <div class="mdui-textfield mdui-textfield-expandable" style="max-width:30%">
+                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+                <input class="mdui-textfield-input" type="text" placeholder="Search" ng-model="search" />
+                <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+            </div>
+        </div>
+    </md-toolbar>
+
+    <md-table-container>
+        <table md-table>
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.getBlogs">
+                <tr md-row>
+                    <th md-column md-order-by="originalFilename"><span>文件名称</span></th>
+                    <th md-column md-order-by="time"><span>时间</span></th>
+                    <th md-column md-order-by="size"><span>大小</span></th>
+                    <th md-column><span>浏览</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="file in vm.file|filter:search| orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                    <td md-cell>{{file.originalFilename}}</td>
+                    <td md-cell>{{file.time|date:'yyyy-MM-dd'}}</td>
+                    <td md-cell>{{file.size}}</td>
+                    <td md-cell>
+                        <md-button class="md-icon-button md-ink-ripple" ng-click="vm.delfile(file)">
+                            <md-icon class="material-icons">delete</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                        <md-button class="md-icon-button md-ink-ripple" ng-href='{{vm.websiteip + "file/download?_id=" + file._id}}'>
+                            <md-icon class="material-icons">file_download</md-icon>
+                            <div class="md-ripple-container"></div>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+    <md-table-pagination md-limit="vm.query.limit" md-limit-options="vm.limitOptions" md-page="vm.query.page" md-total="{{vm.file.length}}" md-page-select=true md-on-paginate=true></md-table-pagination>
+</md-card>

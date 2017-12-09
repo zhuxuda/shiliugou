@@ -1,0 +1,16 @@
+{
+    "apps": [{
+        "name": "shiliugou",
+        "script": "www/production.js",
+        "cwd": "C:\\Users\\hou\\Desktop\\TEST\\thingjs\\shiliugou",
+        "exec_mode": "cluster",
+        "instances": 0,
+        "max_memory_restart": "1G",
+        "autorestart": true,
+        "node_args": [],
+        "args": [],
+        "env": {
+
+        }
+    }]
+}
